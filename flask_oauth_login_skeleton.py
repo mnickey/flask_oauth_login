@@ -1,7 +1,15 @@
 from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy
+import models
+import views
 
 app = Flask(__name__)
+app.config.from_object('config')
+db = SQLAlchemy(app)
 
+
+# from flask_oauth_login_skeleton import models
+# from flask_oauth_login_skeleton import views
 
 @app.route('/')
 def hello_world():
